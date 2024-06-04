@@ -1,5 +1,28 @@
 <!-- partials/nav.antler.html -->
 
+<style>
+    .submenu {
+        display: none;
+    }
+</style>
+
+<script>
+    function toggleSubmenu(id) {
+        const submenu = document.getElementById(id);
+        const isVisible = submenu.style.display === "flex";
+
+        // Hide all submenus
+        document
+            .querySelectorAll(".submenu")
+            .forEach((submenu) => (submenu.style.display = "none"));
+
+        // Show the clicked submenu if it's not already visible
+        if (!isVisible) {
+            submenu.style.display = "flex";
+        }
+    }
+</script>
+
 <nav
     class="
         bg-white
@@ -20,14 +43,54 @@
         />
         <div>
             <ul class="flex gap-8 text-lg">
-                <li class="cursor-pointer">Games</li>
-                <li class="cursor-pointer">PS5</li>
-                <li class="cursor-pointer">PS4</li>
-                <li class="cursor-pointer">Services</li>
-                <li class="cursor-pointer">Accessories</li>
-                <li class="cursor-pointer">News</li>
-                <li class="cursor-pointer">Store</li>
-                <li class="cursor-pointer">Support</li>
+                <li
+                    class="menu-item cursor-pointer"
+                    onclick="toggleSubmenu('games-submenu')"
+                >
+                    Games
+                </li>
+                <li
+                    class="menu-item cursor-pointer"
+                    onclick="toggleSubmenu('ps5-submenu')"
+                >
+                    PS5
+                </li>
+                <li
+                    class="menu-item cursor-pointer"
+                    onclick="toggleSubmenu('ps4-submenu')"
+                >
+                    PS4
+                </li>
+                <li
+                    class="cursor-pointer"
+                    onclick="toggleSubmenu('services-submenu')"
+                >
+                    Services
+                </li>
+                <li
+                    class="cursor-pointer"
+                    onclick="toggleSubmenu('accessories-submenu')"
+                >
+                    Accessories
+                </li>
+                <li
+                    class="cursor-pointer"
+                    onclick="toggleSubmenu('news-submenu')"
+                >
+                    News
+                </li>
+                <li
+                    class="cursor-pointer"
+                    onclick="toggleSubmenu('store-submenu')"
+                >
+                    Store
+                </li>
+                <li
+                    class="cursor-pointer"
+                    onclick="toggleSubmenu('support-submenu')"
+                >
+                    Support
+                </li>
             </ul>
         </div>
     </div>
@@ -38,3 +101,301 @@
         <p>Search</p>
     </div>
 </nav>
+
+<div
+    id="games-submenu"
+    class="
+        submenu
+        bg-white
+        text-black
+        flex
+        justify-center
+        center-items
+        space-x-4
+        p-2
+        w-full
+        gap-24
+    "
+>
+    <a
+        href="#"
+        class="
+            py-2
+            px-6
+            block
+            flex flex-col
+            items-center
+            hover:shadow-lg hover:shadow-gray-900
+            hover:border-gray-900 hover:border-opacity-50
+            rounded
+        "
+    >
+        <img src="/ps5-icon.png" alt="ps5-icon" class="w-16" />
+        PS5</a
+    >
+    <a
+        href="#"
+        class="
+            py-2
+            px-6
+            block
+            flex flex-col
+            items-center
+            hover:shadow-lg hover:shadow-gray-900
+            rounded
+        "
+    >
+        <img src="/ps4-icon.png" alt="ps4-icon" class="w-16" />PS4</a
+    >
+    <a
+        href="#"
+        class="
+            py-2
+            px-6
+            block
+            flex flex-col
+            items-center
+            hover:shadow-lg hover:shadow-gray-900
+            rounded
+        "
+    >
+        <img src="/vr2-icon.png" alt="vr2-icon" class="w-16" />PS VR2</a
+    >
+    <a
+        href="#"
+        class="
+            py-2
+            px-6
+            block
+            flex flex-col
+            items-center
+            hover:shadow-lg hover:shadow-gray-900
+            rounded
+        "
+        ><img src="/pc-icon.png" alt="pc-icon" class="w-16" />PC</a
+    >
+    <a
+        href="#"
+        class="
+            py-2
+            px-6
+            block
+            flex flex-col
+            items-center
+            hover:shadow-lg hover:shadow-gray-900
+            rounded
+        "
+        ><img src="/ps-plus-icon.png" alt="ps-plus-icon" class="w-16" />PS
+        Plus</a
+    >
+</div>
+<!-- PS 5 SUB MENU -->
+<div
+    id="ps5-submenu"
+    class="
+        submenu
+        bg-white
+        text-black
+        flex
+        justify-center
+        gap-8
+        items-center
+        space-x-4
+        p-2
+        w-full
+    "
+>
+    <a
+        href="#"
+        class="
+            py-2
+            px-6
+            block
+            flex flex-col
+            items-center
+            hover:shadow-lg hover:shadow-gray-900
+            rounded
+        "
+        ><img src="/ps5-icon.png" alt="ps5-icon" class="w-16" />Console</a
+    >
+    <a
+        href="#"
+        class="
+            py-2
+            px-6
+            block
+            flex flex-col
+            items-center
+            hover:shadow-lg hover:shadow-gray-900
+            rounded
+        "
+        ><img src="/games-icon.png" alt="games-icon" class="w-16" />Games</a
+    >
+    <a
+        href="#"
+        class="
+            py-2
+            px-6
+            block
+            flex flex-col
+            items-center
+            hover:shadow-lg hover:shadow-gray-900
+            rounded
+        "
+        ><img
+            src="/controller-icon.png"
+            alt="controller-icon"
+            class="w-16"
+        />Controllers</a
+    >
+    <a
+        href="#"
+        class="
+            py-2
+            px-6
+            block
+            flex flex-col
+            items-center
+            hover:shadow-lg hover:shadow-gray-900
+            rounded
+        "
+        ><img src="/vr2-icon.png" alt="vr2-icon" class="w-16" />PS VR2</a
+    >
+    <a
+        href="#"
+        class="
+            py-2
+            px-6
+            block
+            flex flex-col
+            items-center
+            hover:shadow-lg hover:shadow-gray-900
+            rounded
+        "
+        ><img
+            src="/headsets-icon.png"
+            alt="headsets-icon"
+            class="w-10"
+        />Headsets</a
+    >
+</div>
+<!-- PS4 SUB MENU -->
+<div
+    id="ps4-submenu"
+    class="
+        submenu
+        bg-white
+        text-black
+        flex
+        justify-center
+        gap-8
+        items-center
+        space-x-4
+        p-2
+        w-full
+    "
+>
+    <a
+        href="#"
+        class="
+            py-2
+            px-6
+            block
+            flex flex-col
+            items-center
+            hover:shadow-lg hover:shadow-gray-900
+            rounded
+        "
+        ><img src="/ps4-icon.png" alt="ps4-icon" class="w-16" />Console</a
+    >
+    <a
+        href="#"
+        class="
+            py-2
+            px-6
+            block
+            flex flex-col
+            items-center
+            hover:shadow-lg hover:shadow-gray-900
+            rounded
+        "
+        ><img src="/games-icon.png" alt="games-icon" class="w-16" />Games</a
+    >
+    <a
+        href="#"
+        class="
+            py-2
+            px-6
+            block
+            flex flex-col
+            items-center
+            hover:shadow-lg hover:shadow-gray-900
+            rounded
+        "
+        ><img
+            src="/controller-icon.png"
+            alt="controller-icon"
+            class="w-16"
+        />Controllers</a
+    >
+    <a
+        href="#"
+        class="
+            py-2
+            px-6
+            block
+            flex flex-col
+            items-center
+            hover:shadow-lg hover:shadow-gray-900
+            rounded
+        "
+        ><img
+            src="/headsets-icon.png"
+            alt="headsets-icon"
+            class="w-10"
+        />Headsets</a
+    >
+</div>
+<!-- SERVICES SUB MENU -->
+<div
+    id="services-submenu"
+    class="
+        submenu
+        bg-white
+        text-black
+        flex
+        justify-center
+        gap-8
+        items-center
+        space-x-4
+        p-2
+        w-full
+    "
+>
+    <a
+        href="#"
+        class="
+            py-2
+            px-6
+            block
+            flex flex-col
+            items-center
+            hover:shadow-lg hover:shadow-gray-900
+            rounded
+        "
+        ><img src="/ps4-icon.png" alt="ps4-icon" class="w-12" />Console</a
+    >
+    <a
+        href="#"
+        class="
+            py-2
+            px-6
+            block
+            flex flex-col
+            items-center
+            hover:shadow-lg hover:shadow-gray-900
+            rounded
+        "
+        ><img src="/games-icon.png" alt="games-icon" class="w-12" />Games</a
+    >
+</div>

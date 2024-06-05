@@ -1,115 +1,165 @@
-<!-- showcase slider -->
+<style>
+    .showcase-container {
+        width: 100%;
+        text-align: center;
+    }
+
+    .main-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .thumbnails {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .thumbnail {
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: border-color 0.3s;
+    }
+
+    .thumbnail.active {
+        border-color: blue;
+    }
+
+    .thumbnail img {
+        width: 100px;
+        height: auto;
+    }
+</style>
+
+<div class="showcase-container">
+    <img
+        id="mainImage"
+        class="main-image"
+        src="/ps5-console-featured-hardware-image-block-01-en-11aug23.webp"
+        alt="Main Showcase Image"
+    />
+    <div class="thumbnails">
+        <!-- Thumbnail images will be inserted here by JavaScript -->
+    </div>
+</div>
 
 <script>
-    const showCaseItems = [
-        // PS5 Console
-        {
-            headline: "PlayStation 5 Console",
-            description:
-                "Experience an all-new generation of incredible PlayStation games.",
-            butonOneLink: "#",
-            buttonTwoLink: "#",
-            cost: "349.99",
-            image: "/ps5-console-featured-hardware-image-block-01-en-11aug23.webp",
-        },
-        // DualSense Controller
-        {
-            headline: "DualSense™ Wireless Controller",
-            description:
-                "Immerse yourself in the gaming experience with a controller the supports responsive haptic feedback and dynamic trigger effects.",
-            butonOneLink: "#",
-            buttonTwoLink: "#",
-            cost: "49.99",
-            image: "/dualsense-range-stacked-image-block-01-en-11feb22.webp",
-        },
+    document.addEventListener("DOMContentLoaded", function () {
+        const showCaseItems = [
+            {
+                headline: "PlayStation 5 Console",
+                description:
+                    "Experience an all-new generation of incredible PlayStation games.",
+                buttonOneLink: "#",
+                buttonTwoLink: "#",
+                cost: "349.99",
+                image: "/ps5-console-featured-hardware-image-block-01-en-11aug23.webp",
+            },
+            {
+                headline: "DualSense™ Wireless Controller",
+                description:
+                    "Immerse yourself in the gaming experience with a controller that supports responsive haptic feedback and dynamic trigger effects.",
+                buttonOneLink: "#",
+                buttonTwoLink: "#",
+                cost: "49.99",
+                image: "/dualsense-range-stacked-image-block-01-en-11feb22.webp",
+            },
+            {
+                headline: "PlayStation Portal™ Remote Player",
+                description:
+                    "Play your PS5 console over your home Wi-Fi with console quality controls.",
+                buttonOneLink: "#",
+                buttonTwoLink: "#",
+                cost: "199.99",
+                image: "/playstation-portal-featured-hardware-image-block-01-en-12oct23.webp",
+            },
+            {
+                headline: "PULSE Elite™ Wireless Headset",
+                description:
+                    "Enjoy lifelike gaming audio in a comfortable headset design equipped with a retractable microphone and built-in long-life battery.",
+                buttonOneLink: "#",
+                buttonTwoLink: "#",
+                cost: "199.99",
+                image: "/PULSE-Elite-headset-thumbnail-01-en-08sep23.webp",
+            },
+            {
+                headline: "PULSE Explore™ Wireless Earbuds",
+                description:
+                    "Enjoy lifelike gaming audio wherever play takes you with a portable design equipped with hidden microphones and a companion charging case.",
+                buttonOneLink: "#",
+                buttonTwoLink: "#",
+                cost: "199.99",
+                image: "/PULSE-Explore-earbuds-image-block-01-en-08sep23.webp",
+            },
+            {
+                headline: "DualSense Edge™ Wireless Controller",
+                description:
+                    "Get an edge in gameplay with remappable buttons, tuneable triggers and sticks, changeable stick caps, back buttons, and more.",
+                buttonOneLink: "#",
+                buttonTwoLink: "#",
+                cost: "209.99",
+                image: "/dualsense-edge-featured-hardware-image-block-01-en-11aug23.webp",
+            },
+            {
+                headline: "Access™ Controller",
+                description:
+                    "A highly customisable PlayStation®5 controller kit designed to make gaming more accessible.",
+                buttonOneLink: "#",
+                buttonTwoLink: "#",
+                cost: "79.99",
+                image: "/access-controller-featured-hardware-image-block-01-en-12oct23.webp",
+            },
+            {
+                headline: "PS5 Console Covers",
+                description:
+                    "Personalise your PlayStation 5 or PlayStation 5 Digital Edition console with a vibrant array of new colour options.",
+                buttonOneLink: "#",
+                buttonTwoLink: "#",
+                cost: "34.99",
+                image: "/access-controller-featured-hardware-image-block-01-en-12oct23.webp",
+            },
+            {
+                headline: "Media Remote",
+                description:
+                    "Conveniently control movies, streaming services and more on your PS5 console with an intuitive layout.",
+                buttonOneLink: "#",
+                buttonTwoLink: "#",
+                cost: "24.99",
+                image: "/media-remote-featured-hardware-image-block-01-en-11aug23.webp",
+            },
+            {
+                headline: "HD Camera",
+                description:
+                    "Add yourself to your gameplay videos and broadcasts with smooth, sharp, full-HD capture.",
+                buttonOneLink: "#",
+                buttonTwoLink: "#",
+                cost: "24.99",
+                image: "/hd-camera-featured-hardware-image-block-01-en-11aug23.webp",
+            },
+        ];
 
-        // PlayStation Portal Remote Player
-        {
-            headline: "PlayStation Portal™ Remote Player",
-            description:
-                "Play your PS5 console over your home Wi-Fi with console quality controls.",
-            butonOneLink: "#",
-            buttonTwoLink: "#",
-            cost: "199.99",
-            image: "/playstation-portal-featured-hardware-image-block-01-en-12oct23.webp",
-        },
-        // PULSE Elite wireless Headset
-        {
-            headline: "PULSE Elite™ Wireless Headset",
-            description:
-                "Enjoy lifelike gaming audio in a comfortable headset design equipped with a retractable microphone and built-in long-life battery",
-            butonOneLink: "#",
-            buttonTwoLink: "#",
-            cost: "199.99",
-            image: "/PULSE-Elite-headset-thumbnail-01-en-08sep23.webp",
-        },
-        // PULSE Elite wireless Earbuds
-        {
-            headline: "PULSE Explore™ Wireless Earbuds",
-            description:
-                "Enjoy lifelike gaming audio wherever play takes you with a portable design equipped with hidden microphones and a companion charging case.",
-            butonOneLink: "#",
-            buttonTwoLink: "#",
-            cost: "199.99",
-            image: "/PULSE-Explore-earbuds-image-block-01-en-08sep23.webp",
-        },
-        // DualSense Edge
-        {
-            headline: "DualSense Edge™ Wireless Controller",
-            description:
-                "Get an edge in gameplay with remappable buttons, tuneable triggers and sticks, changeable stick caps, back buttons, and more.",
-            butonOneLink: "#",
-            buttonTwoLink: "#",
-            cost: "209.99",
-            image: "/dualsense-edge-featured-hardware-image-block-01-en-11aug23.webp",
-        },
-        // Access Controller
-        {
-            headline: "Access™ Controller",
-            description:
-                "A highly customisable PlayStation®5 controller kit designed to make gaming more accessible.",
-            butonOneLink: "#",
-            buttonTwoLink: "#",
-            cost: "79.99",
-            image: "/access-controller-featured-hardware-image-block-01-en-12oct23.webp",
-        },
-        // PS5 Covers
-        {
-            headline: "PS5 Console Covers",
-            description:
-                "Personalise your PlayStation 5 or PlayStation 5 Digital Edition console with a vibrant array of new colour options.",
-            butonOneLink: "#",
-            buttonTwoLink: "#",
-            cost: "34.99",
-            image: "/access-controller-featured-hardware-image-block-01-en-12oct23.webp",
-        },
+        const mainImage = document.getElementById("mainImage");
+        const thumbnailsContainer = document.querySelector(".thumbnails");
 
-        // MEDIA REMOTE
-        {
-            headline: "Media Remote",
-            description:
-                "Conveniently control movies, streaming services and more on your PS5 console with an intuitive layout.",
-            butonOneLink: "#",
-            buttonTwoLink: "#",
-            cost: "24.99",
-            image: "/media-remote-featured-hardware-image-block-01-en-11aug23.webp",
-        },
-        // HD Camera
-        {
-            headline: "HD Camera",
-            description:
-                "Add yourself to your gameplay videos and broadcasts with smooth, sharp, full-HD capture.",
-            butonOneLink: "#",
-            buttonTwoLink: "#",
-            cost: "24.99",
-            image: "/hd-camera-featured-hardware-image-block-01-en-11aug23.webp",
-        },
-    ];
+        showCaseItems.forEach((item, index) => {
+            const thumbnail = document.createElement("div");
+            thumbnail.classList.add("thumbnail");
+            if (index === 0) thumbnail.classList.add("active"); // Highlight the first thumbnail
 
-    let currentIndex = 0;
-    const showCase = document.getElementById("showCase");
+            thumbnail.innerHTML = `<img src="${item.image}" alt="${item.headline}">`;
+            thumbnailsContainer.appendChild(thumbnail);
 
-    <div id="showCase" class="showCase">
-        // images to be rendered here in slider
-    </div>;
+            thumbnail.addEventListener("click", function () {
+                // Update main image
+                mainImage.src = item.image;
+                // Remove active class from all thumbnails
+                document
+                    .querySelectorAll(".thumbnail")
+                    .forEach((tn) => tn.classList.remove("active"));
+                // Add active class to the clicked thumbnail
+                thumbnail.classList.add("active");
+            });
+        });
+    });
 </script>

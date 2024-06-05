@@ -1,0 +1,60 @@
+<!-- slider partial -->
+
+<style>
+    .slider {
+        position: relative;
+        width: 100%;
+        height: 600px; /* Adjust as needed */
+        overflow: hidden;
+    }
+    .slider-image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: opacity 1s ease-in-out;
+        opacity: 0;
+    }
+    .slider-image.active {
+        opacity: 1;
+    }
+</style>
+
+<div id="slider" class="slider">
+    <!-- Images will be inserted here by JavaScript -->
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sliderImages = [
+            "/days-of-play.png",
+            "/ghost-tsus.png",
+            "/assassins.png",
+            "/cod-3.png",
+            "/stella-blade.png",
+        ];
+
+        let currentIndex = 0;
+        const slider = document.getElementById("slider");
+
+        // Create img elements for each image in the sliderImages array
+        sliderImages.forEach((src, index) => {
+            const img = document.createElement("img");
+            img.src = src;
+            img.alt = "playstation slider images";
+            img.classList.add("slider-image");
+            if (index === 0) img.classList.add("active"); // Show the first image initially
+            slider.appendChild(img);
+        });
+
+        const images = document.querySelectorAll(".slider-image");
+
+        function showNextImage() {
+            images[currentIndex].classList.remove("active");
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add("active");
+        }
+
+        setInterval(showNextImage, 3000); // Change image every 3 seconds
+    });
+</script>

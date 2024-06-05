@@ -1,0 +1,59 @@
+<!-- select images -->
+
+<style>
+    .select {
+        display: flex;
+        flex-wrap: nowrap; /* Ensure images stay in a single row */
+        justify-content: center;
+        gap: 2em; /* Adjust gap as needed */
+    }
+    .select img {
+        height: 110px; /* Adjust as needed */
+        width: auto; /* Maintain aspect ratio */
+        border-radius: 1em;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        -webkit-box-shadow: 0px -1px 5px 0px rgba(0, 0, 0, 0.37);
+        -moz-box-shadow: 0px -1px 5px 0px rgba(0, 0, 0, 0.37);
+        box-shadow: 0px -1px 5px 0px rgba(0, 0, 0, 0.37);
+    }
+
+    .select img:active {
+        border: 1px solid blue;
+    }
+
+    .select img:hover {
+        transform: translateY(-1em);
+        transition: transform 0.3s ease;
+        -webkit-box-shadow: 0px 20px 5px 0px rgba(0, 0, 0, 0.15);
+        -moz-box-shadow: 0px 20px 5px 0px rgba(0, 0, 0, 0.15);
+        box-shadow: 0px 20px 5px 0px rgba(0, 0, 0, 0.15);
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const selectImages = [
+            "/days-of-play.png",
+            "/ghost-tsus.png",
+            "/assassins.png",
+            "/cod-3.png",
+            "/stella-blade.png",
+        ];
+
+        const container = document.querySelector(".select");
+
+        selectImages.forEach((imgSrc) => {
+            const img = document.createElement("img");
+            img.src = imgSrc;
+            img.alt = "select image";
+            container.appendChild(img);
+        });
+    });
+</script>
+
+<div class="mt-8">
+    <div class="select">
+        <!-- Images will be inserted here by JavaScript -->
+    </div>
+</div>

@@ -1,6 +1,8 @@
 <style>
     .showcase-container {
-        width: 100%;
+        margin: 0 auto;
+        padding-top: 3rem;
+        width: 95%;
         text-align: center;
     }
 
@@ -32,13 +34,21 @@
     }
 </style>
 
-<div class="showcase-container">
+<div class="showcase-container grid grid-cols-2 gap-6">
+    <div>
+        <h3 class="text-black text-4xl">Headline here...</h3>
+        <p class="text-black">Description goes here...</p>
+        <button class="bg-black text-white">Click here</button>
+    </div>
     <img
         id="mainImage"
         class="main-image"
         src="/ps5-console-featured-hardware-image-block-01-en-11aug23.webp"
         alt="Main Showcase Image"
     />
+</div>
+
+<div>
     <div class="thumbnails">
         <!-- Thumbnail images will be inserted here by JavaScript -->
     </div>
@@ -55,6 +65,7 @@
                 buttonTwoLink: "#",
                 cost: "349.99",
                 image: "/ps5-console-featured-hardware-image-block-01-en-11aug23.webp",
+                id: 1,
             },
             {
                 headline: "DualSense™ Wireless Controller",
@@ -64,6 +75,7 @@
                 buttonTwoLink: "#",
                 cost: "49.99",
                 image: "/dualsense-range-stacked-image-block-01-en-11feb22.webp",
+                id: 2,
             },
             {
                 headline: "PlayStation Portal™ Remote Player",
@@ -73,6 +85,7 @@
                 buttonTwoLink: "#",
                 cost: "199.99",
                 image: "/playstation-portal-featured-hardware-image-block-01-en-12oct23.webp",
+                id: 3,
             },
             {
                 headline: "PULSE Elite™ Wireless Headset",
@@ -82,6 +95,7 @@
                 buttonTwoLink: "#",
                 cost: "199.99",
                 image: "/PULSE-Elite-headset-thumbnail-01-en-08sep23.webp",
+                id: 4,
             },
             {
                 headline: "PULSE Explore™ Wireless Earbuds",
@@ -91,6 +105,7 @@
                 buttonTwoLink: "#",
                 cost: "199.99",
                 image: "/PULSE-Explore-earbuds-image-block-01-en-08sep23.webp",
+                id: 5,
             },
             {
                 headline: "DualSense Edge™ Wireless Controller",
@@ -100,6 +115,7 @@
                 buttonTwoLink: "#",
                 cost: "209.99",
                 image: "/dualsense-edge-featured-hardware-image-block-01-en-11aug23.webp",
+                id: 6,
             },
             {
                 headline: "Access™ Controller",
@@ -109,6 +125,7 @@
                 buttonTwoLink: "#",
                 cost: "79.99",
                 image: "/access-controller-featured-hardware-image-block-01-en-12oct23.webp",
+                id: 7,
             },
             {
                 headline: "PS5 Console Covers",
@@ -117,7 +134,8 @@
                 buttonOneLink: "#",
                 buttonTwoLink: "#",
                 cost: "34.99",
-                image: "/access-controller-featured-hardware-image-block-01-en-12oct23.webp",
+                image: "/ps5-console-cover-range-image-block-01-en-16feb22.webp",
+                id: 8,
             },
             {
                 headline: "Media Remote",
@@ -127,6 +145,7 @@
                 buttonTwoLink: "#",
                 cost: "24.99",
                 image: "/media-remote-featured-hardware-image-block-01-en-11aug23.webp",
+                id: 9,
             },
             {
                 headline: "HD Camera",
@@ -136,6 +155,7 @@
                 buttonTwoLink: "#",
                 cost: "24.99",
                 image: "/hd-camera-featured-hardware-image-block-01-en-11aug23.webp",
+                id: 10,
             },
         ];
 

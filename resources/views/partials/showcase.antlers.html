@@ -3,7 +3,6 @@
         margin: 0 auto;
         padding-top: 3rem;
         width: 95%;
-        text-align: center;
     }
 
     .main-image {
@@ -21,7 +20,11 @@
     .thumbnail {
         cursor: pointer;
         border: 2px solid transparent;
+        border-radius: 1em;
         transition: border-color 0.3s;
+        -webkit-box-shadow: 10px 11px 11px 0px rgba(0, 0, 0, 0.24);
+        -moz-box-shadow: 10px 11px 11px 0px rgba(0, 0, 0, 0.24);
+        box-shadow: 10px 11px 11px 0px rgba(0, 0, 0, 0.24);
     }
 
     .thumbnail.active {
@@ -29,16 +32,47 @@
     }
 
     .thumbnail img {
-        width: 100px;
+        width: 150px;
         height: auto;
+        border-radius: 1em;
     }
 </style>
 
 <div class="showcase-container grid grid-cols-2 gap-6">
-    <div>
-        <h3 class="text-black text-4xl">Headline here...</h3>
-        <p class="text-black">Description goes here...</p>
-        <button class="bg-black text-white">Click here</button>
+    <div id="product-box" class="product-box justify-items-start">
+        <h3 class="text-black text-4xl mt-2">
+            Introducing the PS5 console and accessories
+        </h3>
+
+        <h4
+            id="product-headline"
+            class="text-black text-2xl mt-8 text-blue-600"
+        >
+            <!-- rendered -->
+        </h4>
+        <p id="product-text" class="text-black text-sm">
+            <!-- rendered -->
+        </p>
+        <div id="product-links" class="mt-6">
+            <a id="product-link1" href="#">
+                <button
+                    class="bg-black text-white bg-blue-500 p-2 rounded-full"
+                >
+                    Find out More
+                </button>
+            </a>
+            <a id="product-link2" href="#">
+                <button
+                    class="bg-black text-white bg-red-500 p-2 px-6 rounded-full"
+                >
+                    Buy now
+                </button>
+            </a>
+        </div>
+        <p id="product-cost" class="text-black mt-6">
+            <strong>Buy from: </strong>
+            <!-- rendered -->
+        </p>
     </div>
     <img
         id="mainImage"
@@ -63,7 +97,7 @@
                     "Experience an all-new generation of incredible PlayStation games.",
                 buttonOneLink: "#",
                 buttonTwoLink: "#",
-                cost: "349.99",
+                cost: "£349.99",
                 image: "/ps5-console-featured-hardware-image-block-01-en-11aug23.webp",
                 id: 1,
             },
@@ -73,7 +107,7 @@
                     "Immerse yourself in the gaming experience with a controller that supports responsive haptic feedback and dynamic trigger effects.",
                 buttonOneLink: "#",
                 buttonTwoLink: "#",
-                cost: "49.99",
+                cost: "£49.99",
                 image: "/dualsense-range-stacked-image-block-01-en-11feb22.webp",
                 id: 2,
             },
@@ -83,7 +117,7 @@
                     "Play your PS5 console over your home Wi-Fi with console quality controls.",
                 buttonOneLink: "#",
                 buttonTwoLink: "#",
-                cost: "199.99",
+                cost: "£199.99",
                 image: "/playstation-portal-featured-hardware-image-block-01-en-12oct23.webp",
                 id: 3,
             },
@@ -93,7 +127,7 @@
                     "Enjoy lifelike gaming audio in a comfortable headset design equipped with a retractable microphone and built-in long-life battery.",
                 buttonOneLink: "#",
                 buttonTwoLink: "#",
-                cost: "199.99",
+                cost: "£199.99",
                 image: "/PULSE-Elite-headset-thumbnail-01-en-08sep23.webp",
                 id: 4,
             },
@@ -103,7 +137,7 @@
                     "Enjoy lifelike gaming audio wherever play takes you with a portable design equipped with hidden microphones and a companion charging case.",
                 buttonOneLink: "#",
                 buttonTwoLink: "#",
-                cost: "199.99",
+                cost: "£199.99",
                 image: "/PULSE-Explore-earbuds-image-block-01-en-08sep23.webp",
                 id: 5,
             },
@@ -113,7 +147,7 @@
                     "Get an edge in gameplay with remappable buttons, tuneable triggers and sticks, changeable stick caps, back buttons, and more.",
                 buttonOneLink: "#",
                 buttonTwoLink: "#",
-                cost: "209.99",
+                cost: "£209.99",
                 image: "/dualsense-edge-featured-hardware-image-block-01-en-11aug23.webp",
                 id: 6,
             },
@@ -123,7 +157,7 @@
                     "A highly customisable PlayStation®5 controller kit designed to make gaming more accessible.",
                 buttonOneLink: "#",
                 buttonTwoLink: "#",
-                cost: "79.99",
+                cost: "£79.99",
                 image: "/access-controller-featured-hardware-image-block-01-en-12oct23.webp",
                 id: 7,
             },
@@ -133,7 +167,7 @@
                     "Personalise your PlayStation 5 or PlayStation 5 Digital Edition console with a vibrant array of new colour options.",
                 buttonOneLink: "#",
                 buttonTwoLink: "#",
-                cost: "34.99",
+                cost: "£34.99",
                 image: "/ps5-console-cover-range-image-block-01-en-16feb22.webp",
                 id: 8,
             },
@@ -143,7 +177,7 @@
                     "Conveniently control movies, streaming services and more on your PS5 console with an intuitive layout.",
                 buttonOneLink: "#",
                 buttonTwoLink: "#",
-                cost: "24.99",
+                cost: "£24.99",
                 image: "/media-remote-featured-hardware-image-block-01-en-11aug23.webp",
                 id: 9,
             },
@@ -153,7 +187,7 @@
                     "Add yourself to your gameplay videos and broadcasts with smooth, sharp, full-HD capture.",
                 buttonOneLink: "#",
                 buttonTwoLink: "#",
-                cost: "24.99",
+                cost: "£24.99",
                 image: "/hd-camera-featured-hardware-image-block-01-en-11aug23.webp",
                 id: 10,
             },
@@ -161,6 +195,26 @@
 
         const mainImage = document.getElementById("mainImage");
         const thumbnailsContainer = document.querySelector(".thumbnails");
+
+        // TEXT
+        const productHeadline = document.getElementById("product-headline");
+        const productText = document.getElementById("product-text");
+        const productButton = document.getElementById("product-button");
+        const productLink1 = document.getElementById("product-link1");
+        const productLink2 = document.getElementById("product-link2");
+        const productCost = document.getElementById("product-cost");
+
+        // Function to update product box content
+        function updateProductBox(item) {
+            productHeadline.textContent = item.headline;
+            productText.textContent = item.description;
+            productLink1.href = item.buttonOneLink;
+            productLink2.href = item.buttonTwoLink;
+            productCost.innerHTML = `Buy from <strong>${item.cost}</strong>`;
+        }
+
+        // Initialize the first item
+        updateProductBox(showCaseItems[0]);
 
         showCaseItems.forEach((item, index) => {
             const thumbnail = document.createElement("div");
@@ -173,12 +227,17 @@
             thumbnail.addEventListener("click", function () {
                 // Update main image
                 mainImage.src = item.image;
+
                 // Remove active class from all thumbnails
                 document
                     .querySelectorAll(".thumbnail")
                     .forEach((tn) => tn.classList.remove("active"));
+
                 // Add active class to the clicked thumbnail
                 thumbnail.classList.add("active");
+
+                // Update text content dynamically
+                updateProductBox(item);
             });
         });
     });

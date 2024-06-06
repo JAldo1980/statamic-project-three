@@ -2,14 +2,15 @@
 
 <style>
     .select {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
         flex-wrap: nowrap; /* Ensure images stay in a single row */
         justify-content: center;
-        gap: 2em; /* Adjust gap as needed */
+        gap: 0.5em; /* Adjust gap as needed */
     }
     .select img {
         height: 110px; /* Adjust as needed */
-        width: auto; /* Maintain aspect ratio */
+        width: 100%; /* Maintain aspect ratio */
         border-radius: 1em;
         cursor: pointer;
         transition: transform 0.3s ease;
@@ -39,6 +40,8 @@
             "/assassins.png",
             "/cod-3.png",
             "/stella-blade.png",
+            "/silent-hill.png",
+            "/horizon.png",
         ];
 
         const container = document.querySelector(".select");
@@ -52,7 +55,7 @@
     });
 </script>
 
-<div class="mt-8">
+<div class="mt-8 pl-20 pr-20">
     <div class="select">
         <!-- Images will be inserted here by JavaScript -->
     </div>
